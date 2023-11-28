@@ -1,8 +1,9 @@
 <script lang="ts">
+  import Button from "./components/Button.svelte";
+  import Description from "./components/Description.svelte";
   import { mgid } from "megaid"
 
   let id: string = mgid()
-  let length: number | null = null
 
   const generateId = () => {
     id = mgid()
@@ -14,8 +15,8 @@
   <div id="container">
     <p>mega-id</p>
     <input bind:value={id} />
-    <button on:click={generateId}>generate id</button>
-    <p id="description">this can be used as a password, tagname, IDs for a database and many other things...</p>
+    <Button generateId={generateId} />
+    <Description />
   </div>
 </main>
 
@@ -36,14 +37,14 @@ input {
   border: none;
 }
 
-#description {
-  opacity: 30%;
-  user-select: none;
-  transition: opacity 300ms ease-in-out;
-}
-
-#description:hover {
-  opacity: 100%;
-}
-
 </style>
+
+
+
+
+
+
+
+
+
+
